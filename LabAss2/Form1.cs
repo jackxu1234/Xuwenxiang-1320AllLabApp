@@ -48,5 +48,10 @@ namespace LabAss2
             double result = n1 / n2;
             MessageBox.Show(n1 + "/" + n2 + " = " + result);
         }
+
+        private void txtNumber1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
