@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
        <div>
-       <h1>Welcome <%Response.Write(Session["Uname"].ToString());%></h1>
+       <h1>Welcome <%Response.Write(Session["Uname"].ToString()); %></h1>
            <br />
 <asp:Button ID="Button1" runat="server" Text="Logout" OnClick="Button1_Click"/>
 </div>

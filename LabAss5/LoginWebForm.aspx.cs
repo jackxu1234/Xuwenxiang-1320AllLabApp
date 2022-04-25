@@ -19,15 +19,15 @@ namespace LabAss5
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["SimpleDatabseComnectionString"].ConnectionString);
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["SimpleDatabaseConnectionString1"].ConnectionString);
             conn.Open();
-            string queryString = "Select UserName，Password from Logon where UserName='" + txtUsername.Text + "'";
+            string queryString = "Select UserName,Password from Logon where UserName='" + txtUsername.Text + "'";
 
             SqlDataAdapter adapter = new SqlDataAdapter();
             adapter.SelectCommand = new SqlCommand(queryString, conn);
 
             DataSet ds1 = new DataSet();
-            adapter.Fill(ds1, "Logon");
+            adapter.Fill(ds1,"Logon");
             if (ds1.Tables["Logon"].Rows.Count == 0)
             {
                 lblCaption.Text = "Invalid Username";
